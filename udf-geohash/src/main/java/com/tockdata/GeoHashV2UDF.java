@@ -28,9 +28,9 @@ public class GeoHashV2UDF extends GenericUDF {
 
     @Override
     public Object evaluate(DeferredObject[] deferredObjects) throws HiveException {
-        double lat = Double.parseDouble(deferredObjects[0].get().toString());
-        double lon = Double.parseDouble(deferredObjects[1].get().toString());
-        int precision = Integer.parseInt(deferredObjects[2].get().toString());
+        double lat = Double.parseDouble((String) deferredObjects[0].get());
+        double lon = Double.parseDouble((String) deferredObjects[1].get());
+        int precision = Integer.parseInt((String) deferredObjects[2].get());
         if (precision > 12) {
             throw new IllegalArgumentException("A geohash can only be 12 character long.");
         } else if (Math.abs(lat) <= 90.0D && Math.abs(lon) <= 180.0D) {
