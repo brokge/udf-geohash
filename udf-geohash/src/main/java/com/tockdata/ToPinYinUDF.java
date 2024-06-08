@@ -103,7 +103,7 @@ public class ToPinYinUDF extends UDF {
         inputs[7] = "差旅";
         inputs[8] = "重点";
         inputs[9] = "重启";
-
+        inputs[9] = "JACK WANG APPLE";
         ToPinYinUDF pingyingUdf = new ToPinYinUDF();
 
         for (int i = 0; i < inputs.length; i++) {
